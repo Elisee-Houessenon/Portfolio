@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.eliseehouessenon.com/moregit.php by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Oct 2022 16:58:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<title>More Gits</title>
+</head>
+<body>
+<div id="ajax-content" class="work-popup">
+
+<div class="container">
+<div class="row">
+<div class="col">
+
+<div class="services">
+<div class="row justify-content-center">
+<div class="col-lg-10">
+
+<div class="service_items">
+<div class="row" id="loops2">
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $.getJSON('https://api.github.com/users/eliseehouessenon/repos', function(data) {
+                // console.log(data);
+                var x = [];
+                // return;
+                $.each(data, function(index) {
+                    var str = data[index].description;
+                    const title = data[index].name;
+                    let newtitle = title; //.substr(0, 25);
+                    // console.log(title);
+                    var res = str; //.substr(0, 50);
+                    x += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='service_single_item'><i class='mbri-github'></i><a href='" +
+                        data[index].html_url +
+                        "' target='_blank' rel='noopener'><h6 style='font-size: 16px;' data-hover='" +
+                        newtitle + "'>" + newtitle + "</h6></a><p>" + res +
+                        "..</p><a href='" + data[index].html_url + "/archive/" + data[index]
+                        .default_branch +
+                        ".zip' class='float-left' style='border: 1px solid #222;border: 1px solid #222;padding: 5px;margin-top: 20px;color: white;' rel='noopener'>Download <span class='mbri-save text-bold' style='color: #ba0d84;margin-left: 8px;'></span></a><p style='border: 1px solid #222;color: #fff; margin-left: 150px;padding: 5px;text-align: center;margin-top: 20px;'>" +
+                        data[index].language + "</p></div></div>";
+
+                    // return index<2;
+                });
+                var load = $('#loops2').append(x);
+            });
+        })
+        </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"75ec04bbaff1b879","version":"2022.10.3","r":1,"token":"c770ff80b72e407689de8f8efa45d75b","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from www.eliseehouessenon.com/moregit.php by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Oct 2022 16:58:55 GMT -->
+</html>
